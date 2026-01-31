@@ -65,46 +65,6 @@ const Orders = () => {
                     จัดการคำสั่งซื้อ
                 </h1>
 
-                <form onSubmit={handleSunmit}>
-                    <input type="text" name='customerName' value={formData.customerName} onChange={handleChange} placeholder='Customer Name' required />
-                    <input type="email" name='email' value={formData.email} onChange={handleChange} placeholder='Email' required />
-                    <input type="text" name='phone' value={formData.phone} onChange={handleChange} placeholder='Phone' required />
-                    <input type="number" name='totalAmount' value={formData.totalAmount} onChange={handleChange} placeholder='Total Amount' required />
-                    <button type="submit">ส่งข้อมูล</button>
-                </form>
-
-                {loading && <p>Loading....</p>}
-
-                {error && (
-                    <p className='text-red-600'>{error}</p>
-                )}
-
-                {!loading && !error && (
-                    <table className="min-w-full border">
-                        <thead className="bg-gray-100">
-                            <tr>
-                                <th className="border px-4 py-2">ID</th>
-                                <th className="border px-4 py-2">ชื่อลูกค้า</th>
-                                <th className="border px-4 py-2">อีเมล</th>
-                                <th className="border px-4 py-2">เบอร์โทร</th>
-                                <th className="border px-4 py-2">ยอดรวม</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {Orders.map(Order => (
-                                <tr key={Order.id}>
-                                    <td className="border px-4 py-2">{Order.id}</td>
-                                    <td className="border px-4 py-2">{Order.customerName}</td>
-                                    <td className="border px-4 py-2">{Order.email}</td>
-                                    <td className="border px-4 py-2">{Order.phone}</td>
-                                    <td className="border px-4 py-2">{Order.totalAmount}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                )
-                }
-
                 <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
                     <p className="text-gray-700 flex items-center gap-2">
                         <i className="bi bi-info-circle-fill text-orange-600"></i>
